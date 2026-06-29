@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Project data
+data/*.b64
+data/*.db
+data/cronjobs.json
+data/*.log
+
+# Secrets
+.env
+*token*
+*key*

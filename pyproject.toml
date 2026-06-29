@@ -1,0 +1,24 @@
+[project]
+name = "manager-ai-bot"
+version = "0.1.0"
+description = "AI Telegram bot — task management, vocab SRS, manga extraction, Notion sync. Modular DDD architecture."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "python-telegram-bot>=20.0",
+    "edge-tts>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
