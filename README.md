@@ -1,2 +1,2 @@
 # manager-ai-bot
-AI Telegram bot - task mgmt, vocab SRS, manga, Notion sync. Modular DDD.
+AI-powered Telegram bot — modular domain-driven architecture
