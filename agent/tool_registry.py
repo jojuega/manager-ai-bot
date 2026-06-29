@@ -9,8 +9,8 @@ A ``ToolRegistry`` holds:
 * a ``destructive`` flag indicating whether the tool requires user
   confirmation before being executed.
 
-The registry intentionally knows nothing about tasks, vocabulary, flashcards,
-manga, etc.  Domain modules register their own tools; ``agent.LLMAgent`` only
+The registry intentionally knows nothing about any particular application
+domain.  Domain modules register their own tools; ``agent.LLMAgent`` only
 consumes the registry through its public surface.
 
 This is the central piece of decoupling that lets us extract the agent core
@@ -27,7 +27,7 @@ class ToolRegistry:
     Storage layout::
 
         self._tools: dict[str, dict] = {
-            "tasks_add_item": {
+            "<tool_name>": {
                 "fn": <callable>,
                 "schema": {...},   # OpenAI/DeepSeek tool definition
                 "destructive": False,

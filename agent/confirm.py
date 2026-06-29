@@ -6,8 +6,8 @@ In the original monolith, the LLM could emit a textual marker of the form
 action it was about to take was destructive and required the user's
 explicit approval.  The Telegram layer would then show Confirm/Cancel
 buttons; on confirm, the bot called ``execute_confirmed(action, params)``
-which routed through ``SAFE_TOOL_MAP`` and ``DESTRUCTIVE_TOOLS`` globals
-on the agent module.
+which routed through the two module-level tool registries defined on
+the original agent module (one for safe tools, one for destructive ones).
 
 In the refactored codebase those globals are gone: tool dispatch lives
 behind a :class:`agent.tool_registry.ToolRegistry`.  This module keeps
